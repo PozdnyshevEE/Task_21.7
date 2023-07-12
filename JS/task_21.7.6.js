@@ -8,7 +8,7 @@ const result = document.querySelector('.resultDiv');
 let myKey = localStorage.getItem('imgKey');
 
 //Функция для возврата fetch
-const useRequest = () => {
+const usesRequest = () => {
 	return fetch(`https://picsum.photos/v2/list?page=${pagesInput.value}&limit=${limitInput.value}`)
 		.then((response) => {
 			return response.json();
@@ -46,7 +46,7 @@ function CheckPage(num) {
 btnRequest.addEventListener('click', async () => {
 	console.log('start');
 	if (CheckPage(pagesInput.value) === true && CheckPage(limitInput.value) === true) {
-		const requestResult = await useRequest();
+		const requestResult = await usesRequest();
 		console.log(requestResult);
 		displayResult(requestResult);
 		localStorage.setItem('imgKey', JSON.stringify(requestResult));

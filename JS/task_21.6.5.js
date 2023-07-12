@@ -12,7 +12,7 @@ const useRequest = () => {
         return json;
     })
     .catch(() => {
-        console.log('error')
+        console.log('error');
     });
 }
 // Функция создания списка задач
